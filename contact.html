@@ -1,0 +1,117 @@
+<!--All comments starting with a "***" are new comments relevant to task 20-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--***Link to jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+    <!-- Links to the font used in this webpage -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&family=Poppins:wght@100;200;300;400;500;600&family=Prompt:wght@100;300;400;500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Links to the icons used in this webpage -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--Links to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--***Links to external Javascript file.-->
+    <script type='text/javascript' src="main.js"></script>
+
+    <title>The ultimate contact</title>
+
+</head>
+
+<!-- ALL CONTAINERS ENABLE ME TO STYLE THE ELEMENTS INSIDE MORE ACCURATELY -->
+<body>
+     <!-- Container that contains all elements inside of the body. I used this as the grid container for this page in order to position content more accurately. -->
+    <div class="contactGrid">
+
+        <div class="contactHeadImg">
+
+            <!--Exactly the same navigation container and navigation bar as in index.html-->
+            <div class="navContainer">
+                <nav>
+                    <a href="index.html" class="logo">The ultimate</a>
+
+                    <!--* Added a new div that contains other divs to create a drop down menu bar using css (the 3 bars)-->
+                    <div class="navList">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <ul>    
+                            <li><a href="index.html">Home</a></li> 
+                            <li><a href="recipes.html">Recipes</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="saveForLater.html">Save for later</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="contactHead">
+                <h1>Contact us</h1>
+            </div>
+
+        </div>
+        <!--*Created a div with a header for the new contact form.-->
+        <div class="shoutHead"><h2>Give us a shout</h2></div>
+
+        <!--***Created a div with a form inside to allow enable the users to contact me-->
+        <div class="shout">
+            <form action="#">
+                <input type="text" name="name" placeholder="Please enter your full name...">
+                <input type="text" name="email" placeholder="Please enter your e-mail address...">
+                <input type="text" name="phone" placeholder="Please enter your phone number...">
+                <textarea name="comment" placeholder="What would you like to contact us about?"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="newsLetterHead"><h2>Subscribe to our newsletter</h2></div>
+        
+        <!--Container that contains a form with three radio button inputs as well as a text input and a submit button input-->
+        <div class="newsLetterContainer">
+            <form action="#">
+
+                <div class="radioButton">
+                    <h3>What recipe would you like to see next?</h3>
+                    <div class="radioLine">
+                        <input class="radio"type="radio" name="steak" value="The ultimate steak">
+                        <label for="steak">The ultimate steak</label><br>
+                    </div>
+                    <div class="radioLine">
+                        <input class="radio" type="radio" name="pasta" value="The ultimate pasta">
+                        <label for="pasta">The ultimate pasta</label><br>
+                    </div>
+                    <div class="radioLine">
+                        <input class="radio" type="radio" name="burrito" value="The ultimate burrito">
+                        <label for="burrito">The ultimate burrito</label><br>
+                    </div>
+                </div>
+
+                <div class="emailForm">
+                    <input class="email" type="text" name="email" placeholder="Email Address...">
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="socialHeader">
+            <h2>Follow us on social media</h2>
+        </div>
+
+        <!--The following container contains icons that are inside of anker tags that link to nowhere-->
+        <div class="socialIcons">
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-facebook"></a>
+        </div> 
+
+    </div>
+</body>
+</html>

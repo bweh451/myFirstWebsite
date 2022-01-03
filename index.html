@@ -1,0 +1,88 @@
+
+<!--All comments starting with a "***" are new comments relevant to task 20-->
+<!--***ADDED MULTIPLE BUTTONS THAT ENABLES USERS TO SAVE SPECIFIC ITEMS.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--***Link to jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+    <!-- Links to the font used in this webpage -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&family=Poppins:wght@100;200;300;400;500;600&family=Prompt:wght@100;300;400;500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!--Links to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--***Links to external Javascript file.-->
+    <script type='text/javascript' src="main.js"></script>
+
+    <title>The ultimate home</title>
+</head>
+
+<!-- ALL CONTAINERS ENABLE ME TO STYLE THE ELEMENTS INSIDE MORE ACCURATELY -->
+<body>
+    <!-- Container that contains all elements inside of the body. I used this as the grid container for this page in order to position content more accurately. -->
+    <div class="indexGrid">
+        
+        <div class="headerImg">
+
+             <!-- Contains navigation bar -->
+            <div class="navContainer">
+
+                 <!-- Contains all elements diplayed inside of navigation bar. -->
+                <nav>
+
+                    <!--Created anker tag that links to index.html-->
+                    <a href="index.html" class="logo">The ultimate</a>
+
+                    <!--***Added a new div that contains other divs to create a drop down menu bar using css (the 3 bars)-->
+                    <div class="navList">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <ul>    
+                            <li><a href="index.html">Home</a></li> 
+                            <li><a href="recipes.html">Recipes</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="saveForLater.html">Save for later</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!--The following code block contains simple content elements.-->
+            <!--Code block begins-->
+            <div class="header">
+                <h1>Welcome to the ultimate</h1>
+                <h2>Where you can find the ultimate recipes of everything you like to eat</h2>
+             </div>
+
+        </div>
+
+        <div class="about">
+            <h2>About</h2>
+        </div>
+
+        <div class="aboutTxt">
+            <p>What is this all about? I'm just a simple guy who loves food, that's all. I started this website in hopes to share some of my favourite recipes of everyday food items. Recipes that, to me atleast, are the ultimate form of
+                said everyday food items. Like I said, I'm just a simple guy. I have no professional cooking knowledge whatsoever. Just your avarage home cook. This website is made for you, yeah YOU! I see you sitting there and worrying about what your going to cook for your friends and family. Well FEAR NO MORE! 
+                Not to worry, my friend. These recipes are simple and straighforward. So simple in fact, even a caveman can do it! I truly believe that these recipes can give you some confidence in the kitchen and will make you fall in love with food and the cooking process just as I have! Now go forth and COOK!
+                <button class="saveTxt">Save For Later</button>
+            </p>
+            
+        </div>
+       
+        <div class="aboutImg">
+            <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Chef">
+            <button class="saveImage">Save For Later</button>
+        </div>
+
+        <!--Code block ends-->
+    </div>
+     
+</body>
+</html>

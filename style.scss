@@ -1,0 +1,1058 @@
+//All comments starting with a "***" are new comments relevant to task 20.
+
+//Created variables for the two main colours used on the website.
+$primaryColour: #111111;
+$secondaryColour: white; 
+
+//Created mixin to be able to center items using flexbox, helps reduce some code.
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//The following code block is used for the entire website (all webpages).
+
+//<--- Code block begins --->
+//Changed the background colour, font and text color for the entire html document.
+html{
+    background-color: $primaryColour;
+    font-family: 'Poppins', sans-serif;
+    color: $secondaryColour;
+}
+
+//Makes body cover page edge to edge
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    button{
+        border-radius: 12px;
+        border-style:none;
+        background-color: $secondaryColour;
+        color: $primaryColour;
+        padding: 5px 5px;
+        margin: 0px;
+    }
+}
+
+//Makes navigation bar fixed, you'll always see it even when scrolling.
+.navContainer{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+//Styles all elements inside of the navigation bar, including the navigation bar itself.
+nav{
+    margin: 20px 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .navlist{
+        display: inline-block;
+        }
+          
+        //***Adds styling to the 3 divs with the follwings class names.
+        //***Creates the 3 drop down menu bars.
+          .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: white;
+            margin: 6px 0;
+          }
+    
+    .logo{
+        text-decoration: none;
+        color: $secondaryColour;
+        font-size: 170%;
+        text-transform: uppercase;
+    }
+    ul{
+        list-style: none;
+        display: none;
+        gap: 30px;
+        letter-spacing: 2px;
+        li{
+            margin-right: 20px;
+        } 
+        a{
+            color: $secondaryColour;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}
+//<--- Code block ends --->
+
+
+
+//The following code block only applies to the index.html file.
+
+//<--- Code block begins --->
+//Splits webpage into a grid so I can place content more accurately.
+.indexGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 0.5fr;
+    grid-template-areas: 
+    "header header"
+    "about about"
+    "aboutTxt aboutImg";
+}
+
+//Styles the header.
+//Placed an image in the background of the header.
+//Links to specific grid area.
+.headerImg{
+    grid-area: header;
+    position: relative;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1478&q=80) no-repeat center;
+    background-size: cover;
+
+    //Places text over the background image and add styles to the text.
+    //Links to specific grid area.
+    .header{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondaryColour;
+        h1{
+            text-transform: uppercase;
+            font-size: 300%;
+            text-align: center;
+            
+        }
+        h2{
+            text-align: center;
+        }
+    }
+}
+
+//Styles and positions the "about" header.
+//Links to specific grid area.
+.about{
+    grid-area: about;
+    @include flexCenter();
+    text-transform: uppercase;
+    color: $secondaryColour;
+}
+
+//Styles and positions the "about" text.
+//Links to specific grid area.
+.aboutTxt{
+    grid-area: aboutTxt;
+    border-top: 1px solid $secondaryColour;
+    border-right: 1px solid $secondaryColour;
+    background-color: $primaryColour;
+    color: $secondaryColour;
+    @include flexCenter();
+    font-size: 150%;
+    padding: 0px 30px;
+}
+
+//Makes the image in "aboutImg" div cover the entire div.
+//Links to specific grid area.
+.aboutImg{
+    grid-area: aboutImg;
+    img{
+        width: 100%;
+        height:100%;
+    }
+}
+//<--- Code block ends --->
+
+
+//The following block of code only applies to recipes.html
+
+//<--- Code block begins --->
+//Splits webpage into a grid so I can place content more accurately.
+//***Added hide, show, slide up, slide down buttons to the recipe grid.
+.recipeGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.1fr 0.3fr 0.1fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+    grid-template-areas:
+    "recipeHead recipeHead recipeHead recipeHead recipeHead"
+    "burgerHead burgerHead burgerHead burgerHead burgerHead"
+    ". burgerWhyImg burgerWhyImg burgerWhyImg."
+    ". burgerWhyTxt burgerWhyTxt burgerWhyTxt ."
+    ". tableContainer tableContainer tableContainer ."
+    ". burgerGuide1 burgerGuide1 burgerImg1 ."
+    ". burgerImg2 burgerGuide2 burgerGuide2 ."
+    ". burgerGuide3 burgerGuide3 burgerImg3 ."
+    ". burgerImg4 burgerGuide4 burgerGuide4 ."
+    ". burgerGuide5 burgerGuide5 burgerImg5 ."
+    "buyHead buyHead buyHead buyHead buyHead"
+    ". buyPic buyCheckers buyWoolies ."
+    "userCommentsHead userCommentsHead userCommentsHead userCommentsHead userCommentsHead"
+    ". userComment1 userComment2 userComment3 ."
+    ". . hideShow . ."
+    "commentHead commentHead commentHead commentHead commentHead"
+    "commentContainer commentContainer commentContainer commentContainer commentContainer"
+    ". . slideComSec . ."
+    "pizzaHead pizzaHead pizzaHead pizzaHead pizzaHead"
+    "pizzaWhyImg pizzaWhyImg pizzaWhyImg pizzaWhyImg pizzaWhyImg";
+}
+
+//Similar format as the "headerImg" in index.html
+.recipeHeadImg{
+    grid-area: recipeHead;
+    position: relative;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/photo-1605709303019-109aaf636e32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80) no-repeat center;
+    background-size: cover;
+
+    //Same format as the "header" in index.html
+    .recipeHead{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondaryColour;
+        h1{
+            text-transform: uppercase;
+            font-size: 300%;
+            text-align: center;
+            letter-spacing: 5px;
+            
+        }
+    }
+}
+
+
+//Same format as "about" in index.html
+.burgerHead{
+    grid-area: burgerHead;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+//Same format as "aboutImg" in index.html.
+.burgerWhyImg{
+    grid-area: burgerWhyImg;
+    img{
+        width: 100%;
+        height: 90%;
+    }
+    
+}
+
+//Styles and positions the text underneath "burgerWhyImg".
+//First use of the "flexCenter" mixin.
+.burgerWhyTxt{
+    grid-area: burgerWhyTxt;
+    @include flexCenter();
+    flex-direction: column;
+    p{
+        font-size: 110%;
+    }
+}
+
+//Links to specific grid aread and positions table container.
+.tableContainer{
+    grid-area: tableContainer;
+    margin: 30px 0px;
+    
+    //Styles the table within table container.
+    table{
+        background-color: $secondaryColour;
+        color: $primaryColour;
+        padding: 30px 30px;
+        border-radius: 12px;
+        border: 1px solid $secondaryColour;
+        border-spacing: 10px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//Styles all the headings of the "burgerGuide" divs.
+.burgerGuideHead{
+    margin:0px 20px;
+}
+
+
+//Styles all the paragraphs of the "burgerGuide" divs.
+.burgerGuideBody{
+    margin:0px 20px;
+}
+
+//Links to specific grid area.
+//Displays border lines.
+.burgerGuide1{
+    border-top: 1px solid $secondaryColour;
+    border-left: 1px solid $secondaryColour;
+    grid-area: burgerGuide1;
+    
+}
+
+//Same as above.
+.burgerGuide2{
+    border-top: 1px solid $secondaryColour;
+    border-right: 1px solid $secondaryColour;
+    grid-area: burgerGuide2;
+}
+
+//Same as above.
+.burgerGuide3{
+    border-top: 1px solid $secondaryColour;
+    border-left: 1px solid $secondaryColour;
+    grid-area: burgerGuide3;
+}
+
+//Same as above.
+.burgerGuide4{
+    border-top: 1px solid $secondaryColour;
+    border-right: 1px solid $secondaryColour;
+    grid-area: burgerGuide4;
+}
+
+//Same as above.
+.burgerGuide5{
+    border-top: 1px solid $secondaryColour;
+    border-left: 1px solid $secondaryColour;
+    grid-area: burgerGuide5;
+}
+
+//Same format as "aboutImg" in index.html, however this applies to all "burgerImg" tags.
+.allBurgerImg{
+    img{
+    width: 100%;
+    height: 94%;
+    }
+}
+
+//Links to specific grid area.
+.burgerImg1{
+    grid-area: burgerImg1;
+}
+
+//Same as above.
+.burgerImg2{
+    grid-area: burgerImg2;
+}
+
+//Same as above.
+.burgerImg3{
+    grid-area: burgerImg3;
+}
+
+//Same as above.
+.burgerImg4{
+    grid-area: burgerImg4;
+}
+
+//Same as above.
+.burgerImg5{
+    grid-area: burgerImg5;
+}
+
+//Links to specific grid area.
+//Styles and positions the element as well as display border lines around the element.
+.buyHead{
+    grid-area: buyHead;
+    border-top: 1px solid $secondaryColour;
+    @include flexCenter();
+}
+
+//Gives a margin to "buyPic", "buyWoolies" and "buyCheckers" classes
+.buyLink{
+    margin: 20px 10px;
+}
+
+//Links to specific grid area.
+//Same as "aboutImg".
+.buyPic{
+    grid-area: buyPic;
+    img{
+        width: 100%;
+        height: 95%;
+    }
+}
+
+//Same as above.
+.buyWoolies{
+    grid-area: buyWoolies;
+    img{
+        width: 100%;
+        height: 95%;
+    }
+}
+//Same as above.
+.buyCheckers{
+    grid-area: buyCheckers;
+    img{
+        width: 100%;
+        height: 95%;
+    }
+}
+
+//Links to specific grid area.
+//Positions and centers elements inside div.
+//Displays border lines.
+.userCommentsHead{
+    grid-area: userCommentsHead;
+    border-top: 1px solid $secondaryColour;
+    border-bottom: 1px solid $secondaryColour;
+    @include flexCenter();
+    
+}
+
+//Positions and styles all "userComment1/2/3"
+.userComments{
+    margin: 20px 20px;
+    padding: 0px 30px;
+    background-color: $secondaryColour;
+    color: $primaryColour;
+    border-radius: 12px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+//Links to specific grid area.
+//Displays a border line.
+.userComment1{
+    grid-area: userComment1;
+    border-right: 1px solid $secondaryColour;
+}
+
+//Links to specific grid area.
+.userComment2{
+    grid-area: userComment2;
+    
+}
+//Links to specific grid area.
+//Displays a border line.
+.userComment3{
+    grid-area: userComment3;
+    border-left: 1px solid $secondaryColour;
+}
+
+//***Places the hide and show buttons on their specific grid area and styles the buttons.
+.hideShow{
+    width: 100%;
+    height: 100%;
+    grid-area: hideShow;
+    @include flexCenter();
+    button{
+        width: 50%;
+        height: 50%;
+        border-style: none;
+        border-radius: 12px;
+        padding: 5px 5px;
+    }
+}
+
+#show{
+    margin-left: 5px;
+}
+
+//Same as "userCommentsHead"
+.commentHead{
+    border-top: 1px solid $secondaryColour;
+    grid-area: commentHead;
+    @include flexCenter();
+}
+
+//Links to specific grid area.
+//Positions and styles all elements within "commentContainer" and displays a border line.
+.commentContainer{
+    grid-area: commentContainer;
+    width: 100%;
+    padding-bottom: 30px;
+    display:flex;
+    justify-content: center;
+    
+    //Positions and styles all elements within "form" tag.
+    form{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+
+        ////Positions and styles all elements within "input" tags.
+        input{
+            font-family: 'Poppins', sans-serif;
+            height: 50px;
+            margin: 10px 30px;
+            border-radius: 12px;
+            border-style: none;
+        }
+        //Positions and styles all elements within "textarea" tag.
+        textarea{
+            font-family: 'Poppins', sans-serif;
+            border-radius: 12px;
+            height: 150px;
+            margin: 10px 30px;
+            border-style: none;
+        }
+        
+        p{
+            margin-left: 30px;
+        }
+
+        //***When the like button has the .liked class then the background colour will change to the following.
+        .liked{
+            background-color: #3C3CA9;
+        }
+
+        //Positions and styles all elements within "button" tag.
+        button{
+            font-family: 'Poppins', sans-serif;
+            background-color: $secondaryColour;
+            border-radius: 12px;
+            border-style: none;
+            height: 30px;
+            margin: 10px 30px;
+            width: 15%;
+        }
+    }
+}
+
+//***Similar format to the hide and show buttons.
+#slideComSec{
+    grid-area: slideComSec;
+    width: 100%;
+    height: 100%;
+    @include flexCenter();
+    #slideDown{
+        margin-left: 5px;
+    }
+    button{
+        width: 50%;
+        height: 50%;
+        border-style: none;
+        border-radius: 12px;
+        padding: 5px 5px;
+    }
+}
+
+//Links to specific grid area.
+//Styles and positions all elements within "pizzaHead" class.
+.pizzaHead{
+    grid-area: pizzaHead;
+    border-top: 1px solid $secondaryColour;
+    text-transform: uppercase;
+    @include flexCenter();
+    letter-spacing: 5px;
+}
+
+//Similar format as the "headerImg" in index.html.
+.pizzaWhyImg{
+    grid-area: pizzaWhyImg;
+    position: relative;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) no-repeat center;
+    background-size: cover;
+
+    .pizzaWhyTxt{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondaryColour;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 900px;
+        h1{
+            text-transform: uppercase;
+            font-size: 500%;
+            letter-spacing: 20px;
+            text-align: center;
+            padding: 0px 30px;
+        }
+
+    }
+}
+//<--- Code block ends --->
+
+
+
+//The following block of code only applies to contact.html
+
+//<--- Code block begins --->
+//Splits webpage into a grid so I can place content more accurately.
+.contactGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.1fr 1fr 0.1fr 0.5fr;
+    grid-template-areas: 
+    "contactHeadImg"
+    "shoutHead"
+    "shout"
+    "newsLetterHead"
+    "newsLetterContainer"
+    "socialHeader"
+    "socialIcons";
+}
+
+//Similar format as the "headerImg" in index.html
+.contactHeadImg{
+    grid-area: contactHeadImg;
+    position: relative;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/photo-1485770958101-9dd7e4ea6d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80) no-repeat center;
+    background-size: cover;
+    
+    .contactHead{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondaryColour;
+        h1{
+            text-transform: uppercase;
+            font-size: 300%;
+            text-align: center;
+            letter-spacing: 5px;
+            
+        }
+    }
+}
+
+//***Positions shoutHead to specific grid area and centers it.
+.shoutHead{
+    grid-area: shoutHead;
+    @include flexCenter();
+}
+
+//***Positions shout to specific grid area and centers it and adds styling.
+//***Has similar styling to the comment section in recipes.html
+.shout{
+    grid-area: shout;
+    border-bottom: 1px solid $secondaryColour;
+    width: 100%;
+    padding-bottom: 30px;
+    display:flex;
+    justify-content: center;
+    
+    form{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        input{
+            font-family: 'Poppins', sans-serif;
+            height: 50px;
+            margin: 10px 30px;
+            border-radius: 12px;
+            border-style: none;
+        }
+     
+        textarea{
+            font-family: 'Poppins', sans-serif;
+            border-radius: 12px;
+            height: 150px;
+            margin: 10px 30px;
+            border-style: none;
+        }
+        
+        button{
+            font-family: 'Poppins', sans-serif;
+            background-color: $secondaryColour;
+            border-radius: 12px;
+            border-style: none;
+            height: 30px;
+            margin: 10px 30px;
+            width: 15%;
+        }
+    }
+}
+
+
+
+//Similar format to "pizzaHead" class in recipe.html.
+.newsLetterHead{
+    grid-area: newsLetterHead;
+    @include flexCenter();
+}
+
+//Styles and positions all elements within "newsLetterContainer" class.
+.newsLetterContainer{
+    grid-area: newsLetterContainer;
+    @include flexCenter();
+    flex-direction: column;
+
+    
+    form{
+        //Styles and positions the elements within the "radioButton" class that also lies within the "form" tag.
+        .radioButton{
+            background-color: $secondaryColour;
+            color: $primaryColour;
+            border-radius: 12px;
+            padding: 10px 20px;
+            .radioLine{
+                margin-bottom: 20px;
+            }
+        }
+
+        //Styles and positions the elements within the "emailForm" class that also lies within the "form" tag.
+        .emailForm{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+
+            input{
+                font-family: 'Poppins', sans-serif;
+                border-radius: 12px;
+                height: 50px;
+                margin: 10px 0px;
+                border-style: none;
+            }
+
+            button{
+                font-family: 'Poppins', sans-serif;
+                background-color: $secondaryColour;
+                border-radius: 12px;
+                border-style: none;
+                height: 30px;
+                width: 15%;
+                margin: 10px 0px;
+            }
+        }
+    }
+}
+//Similar format to "pizzaHead" class in recipe.html.
+//Displays a border line.
+.socialHeader{
+    grid-area: socialHeader;
+    border-top: 1px solid $secondaryColour;
+   @include flexCenter();
+}
+
+//Styles and positions all elements within the "socialIcons" class.
+.socialIcons{
+    grid-area: socialIcons;
+    @include flexCenter();
+    a{
+        text-decoration: none;
+        color: $primaryColour;
+        background-color: $secondaryColour;
+        font-size: 500%;
+        margin: 0px 20px;
+        border-radius: 50%;
+        padding: 25px 30px;
+    }
+
+    //Gave some extra padding on the left and right.
+    .fa-facebook{
+        padding: 25px 40px;
+    }
+}
+//<--- Code block ends --->
+
+//The following block of code only applies to saveForLater.html
+//<--- Code block begins --->
+//Splits webpage into a grid so I can place content more accurately.
+#saveForLaterContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 1fr;
+    grid-template-areas: 
+    " saveForLaterHead  saveForLaterHead saveForLaterHead "
+    ". displaySaveHead ."
+    ". displaySave .";
+    
+}
+//***Similar format as the "headerImg" in index.html
+#saveForLaterImg{
+    grid-area: saveForLaterHead;
+    position: relative;
+    overflow: hidden;
+    background: url(https://images.unsplash.com/photo-1618912487390-8987d3c3b862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80) no-repeat center;
+    background-size: cover;
+
+    //***Same format as the "header" in index.html
+    #saveForLaterHead{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondaryColour;
+        h1{
+            text-transform: uppercase;
+            font-size: 300%;
+            text-align: center;
+            letter-spacing: 5px;
+            
+        }
+    }
+}
+
+//***Places the header item into specific grid area and 
+#displaySaveHead{
+    grid-area: displaySaveHead;
+    @include flexCenter(); 
+}
+
+//***Places items on specific grid area.
+//***Removes all buttons from the save for later page.
+//***Sets all images to a specific width.
+#displaySave{
+    grid-area: displaySave;
+    button{
+        display: none;
+    }
+    img{
+        width: 700px;
+        height: 500px;
+    }
+}
+
+//<--- Code block ends --->
+
+//The following block of code applies to all the html elements specified within.
+//This makes all the webpages responsive to a degree so you can view it on multiple screens.
+//The main changes that are made are to the layouts of the grids in each webpage.
+//There are some different styling changes to help readability for different screen sizes.
+
+//<--- Code block begins --->
+@media only screen and (max-width:480px){
+    .indexGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "about"
+        "aboutImg"
+        "aboutTxt";
+    }
+
+    //***Added hide, show, slide up, slide down buttons to the recipe grid.
+    .recipeGrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-areas:
+        "recipeHead"
+        "burgerHead"
+        "burgerWhyImg"
+        "burgerWhyTxt"
+        "tableContainer"
+        "burgerGuide1"
+        "burgerImg1"
+        "burgerGuide2"
+        "burgerImg2" 
+        "burgerGuide3"
+        "burgerImg3"
+        "burgerGuide4" 
+        "burgerImg4" 
+        "burgerGuide5"
+        "burgerImg5"
+        "buyHead"
+        "buyPic" 
+        "buyCheckers"
+        "buyWoolies" 
+        "userCommentsHead"
+        "userComment1"
+        "userComment2"
+        "userComment3"
+        "hideShow"
+        "commentHead"
+        "commentContainer"
+        "slideComSec "
+        "pizzaHead"
+        "pizzaWhyImg";
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        ul{
+            gap: 10px;
+        }
+    }
+
+    .pizzaHead{
+        h1{
+            font-size: 180%;
+        }
+    }
+    .pizzaWhyImg{
+        .pizzaWhyTxt{
+            h1{
+                font-size: 250%;
+                letter-spacing: 0px;
+            }
+        }
+    }
+    
+    .commentContainer{
+        width: 100%;
+    
+        form{
+            width:100%;
+            
+            button{
+                width: 25%;
+            }
+        }
+    }
+
+    .socialIcons{
+        a{
+            font-size: 300%;
+            margin: 0px 10px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width:769px) {
+    .indexGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "about"
+        "aboutImg"
+        "aboutTxt";
+    }
+
+    .aboutTxt{
+        border: none;
+        font-size: 100%;
+    }
+
+    //***Added hide, show, slide up, slide down buttons to the recipe grid.
+    .recipeGrid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-areas:
+        "recipeHead recipeHead"
+        "burgerHead burgerHead"
+        "burgerWhyImg burgerWhyImg"
+        "burgerWhyTxt burgerWhyTxt"
+        "tableContainer tableContainer"
+        "burgerGuide1 burgerImg1"
+        "burgerImg2 burgerGuide2"
+        "burgerGuide3 burgerImg3"
+        "burgerImg4 burgerGuide4"
+        "burgerGuide5 burgerImg5"
+        "buyHead buyHead"
+        "buyPic buyCheckers"
+        "buyWoolies ."
+        "userCommentsHead userCommentsHead"
+        "userComment1 userComment2"
+        "userComment3 ."
+        "hideShow hideShow"
+        "commentHead commentHead"
+        "commentContainer commentContainer"
+        "slideComSec slideComSec"
+        "pizzaHead pizzaHead"
+        "pizzaWhyImg pizzaWhyImg";
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        ul{
+            gap: 10px;
+        }
+    }
+
+    .commentContainer{
+        width: 100%;
+    
+        form{
+            width:100%;
+            
+            button{
+                width: 25%;
+            }
+        }
+    }
+    
+    .pizzaWhyImg{
+        .pizzaWhyTxt{
+            h1{
+                font-size: 250%;
+                letter-spacing: 0px;
+            }
+        }
+    }
+
+    .buyLink{
+        margin:20px 0px 0px 0px;
+    }
+
+    .socialIcons{
+        a{
+            font-size: 300%;
+            margin: 0px 10px;
+        }
+    }
+
+}
+
+//***Changes height of all the images with ".allBurgerImg" class.
+.allBurgerImg{
+    img{
+        height: 90%;
+    }
+}
+
+@media  only screen and (min-width: 770px) and (max-width:1024px){
+    .indexGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "about"
+        "aboutImg"
+        "aboutTxt";
+    }
+
+    .aboutTxt{
+        border: none;
+    }
+
+    //***Added hide, show, slide up, slide down buttons to the recipe grid.
+   .recipeGrid{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.1fr 0.1fr 1fr;
+        grid-template-areas:
+        "recipeHead recipeHead recipeHead"
+        "burgerHead burgerHead burgerHead"
+        "burgerWhyImg burgerWhyImg burgerWhyImg"
+        "burgerWhyTxt burgerWhyTxt burgerWhyTxt"
+        "tableContainer tableContainer tableContainer"
+        "burgerGuide1 burgerGuide1 burgerImg1"
+        "burgerImg2 burgerGuide2 burgerGuide2"
+        "burgerGuide3 burgerGuide3 burgerImg3"
+        "burgerImg4 burgerGuide4 burgerGuide4"
+        "burgerGuide5 burgerGuide5 burgerImg5"
+        "buyHead buyHead buyHead"
+        "buyPic buyCheckers buyWoolies"
+        "userCommentsHead userCommentsHead userCommentsHead"
+        "userComment1 userComment2 userComment3"
+        ". hideShow ."
+        "commentHead commentHead commentHead"
+        "commentContainer commentContainer commentContainer commentContainer commentContainer"
+        ". slideComSec ."
+        "pizzaHead pizzaHead pizzaHead"
+        "pizzaWhyImg pizzaWhyImg pizzaWhyImg";
+    }
+
+    .buyLink{
+        margin:20px 0px;
+    }
+ 
+}
+//<--- Code block ends --->
+
+

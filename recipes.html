@@ -1,0 +1,298 @@
+<!--All comments starting with a "***" are new comments relevant to task 20-->
+<!--***ADDED MULTIPLE BUTTONS THAT ENABLES USERS TO SAVE SPECIFIC ITEMS.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--***Link to jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+    <!-- Links to the font used in this webpage -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&family=Poppins:wght@100;200;300;400;500;600&family=Prompt:wght@100;300;400;500;600&family=Roboto&display=swap" rel="stylesheet">
+
+      <!--Links to the icons used in this webpage -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--***Links to external Javascript file.-->
+    <script type='text/javascript' src="main.js"></script>
+
+    <title>The ultimate recipes</title>
+
+</head>
+    <!-- ALL CONTAINERS ENABLE ME TO STYLE THE ELEMENTS INSIDE MORE ACCURATELY -->
+<body>
+
+      <!-- Container that contains all elements inside of the body. I used this as the grid container for this page in order to position content more accurately. -->
+    <div class="recipeGrid">
+
+        <div class="recipeHeadImg">
+
+             <!--Exactly the same navigation container and navigation bar as in index.html-->
+            <div class="navContainer">
+                <nav>
+                    <a href="index.html" class="logo">The ultimate</a>
+
+                     <!--* Added a new div that contains other divs to create a drop down menu bar using css (the 3 bars)-->
+                    <div class="navList">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <ul>    
+                            <li><a href="index.html">Home</a></li> 
+                            <li><a href="recipes.html">Recipes</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="saveForLater.html">Save for later</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!--The following code block contains simple content elements-->
+            <!--Code block begins-->
+            <div class="recipeHead">
+                <h1>The ultimate recipes</h1>
+            </div>
+
+        </div>
+
+        <div class="burgerHead">
+            <h1>The ultimate burger</h1>
+        </div>
+
+        <div class="burgerWhyImg">
+            <img src="https://images.unsplash.com/photo-1603508102983-99b101395d1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Smashed burger">
+            <button class="saveImage">Save For Later</button>
+        </div>
+
+        <div class="burgerWhyTxt">
+            <h1>Why a burger?</h1>
+            <p>It's simple. Burgers have been one of my go to food items to get on a menu, but I felt like they have become overpriced for what you get. 
+                This recipe will showcase how to make an incredibly delecious burger, that is simple and straight to the point. For a decent price !
+            </p>
+            
+        </div>
+
+        <!--Contains a table with 2 columns and 8 rows-->
+        <div class="tableContainer">
+            <table>
+                
+                <tr>
+                    <th> Ingredients</th>
+                    <th> Quantity</th>
+                </tr>
+
+                <tr>
+                    <td>500g Wagyu beef mince</td>
+                    <td> 2 </td>
+                </tr>
+
+                <tr>
+                    <td>4-pack Seeded white hamburger rolls</td>
+                    <td> 1 </td>
+                </tr>
+
+                <tr>
+                    <td>150g Lettuce</td>
+                    <td> 1 </td>      
+                </tr>
+
+                <tr>
+                    <td>Large Tomato</td>
+                    <td> 1 </td>
+                </tr>
+
+                <tr>
+                    <td>12-pack Processed cheddar cheese slices</td>
+                    <td> 1 </td>
+                </tr>
+
+                <tr>
+                    <td>150g Bwell Mayonaise </td>
+                    <td> 1 </td>
+                </tr>
+
+                <tr>
+                    <td>Coconut Oil</td>
+                    <td>1 tbsp</td>
+                </tr>
+
+                <tr>
+                    <td>Salt & Pepper</td>
+                    <td>To taste</td>
+                </tr>
+
+                
+            </table>
+            <button id="saveTable">Save For Later</button>
+        </div>
+
+        
+            <div class="burgerGuide1 allBurgerGuide recipe">
+                
+                    <div class="burgerGuideHead"><h3>Step 1:</h3></div>
+                    <div class="burgerGuideBody">
+                        <p>Prepare all ingredients. Wash and dry lettuce. Remove cheese slices from packaging. Wash and slice tomato. Slide hamburger buns in half.
+                        </p>
+                    </div>
+                    <button class="saveGuideTxt">Save For Later</button>
+            </div>
+
+            <div class="burgerImg1 allBurgerImg recipe">
+                <img src="Images/step1.jpg" alt="">
+                <button class="saveImage">Save For Later</button>
+            </div>
+
+            <div class="burgerGuide2 allBurgerGuide recipe">
+                
+                    <div class="burgerGuideHead"><h3>Step 2:</h3></div>
+                    <div class="burgerGuideBody">
+                        <p>Prepare the patties. Cut parchment paper into squares (about 10cm x 10cm). Lightly shape minced meat into 125g balls.
+                            Layer the balls between two sheets of parchment paper and flatten to about 1.5cm. Remove top parchment paper and season patties with salt and pepper to taste.
+                        </p>
+                    </div>
+                    <button class="saveGuideTxt">Save For Later</button>
+            </div>
+
+            <div class="burgerImg2 allBurgerImg recipe">
+                <img src="Images/step2.jpg" alt="">
+                <button class="saveImage">Save For Later</button>
+            </div>
+
+            <div class="burgerGuide3 allBurgerGuide recipe">
+                
+                    <div class="burgerGuideHead"><h3>Step 3:</h3></div>
+                    <div class="burgerGuideBody">
+                        <p>Shallow fry the patties. Add 1 tbsp. of coconut oil to a frying pan. Bring the oil to a medium-high heat.
+                            Add your room temperature flattened patties to the fryin pan, seasoned side down. Remove parchment paper and season with salt
+                            and pepper to taste. Fry until the blood start to pool on the top of the patties, flip and add two slices of cheese.
+                            Remove from pan when underside is crisp.
+                        </p>
+                    </div>
+                    <button class="saveGuideTxt">Save For Later</button>
+            </div>
+
+            <div class="burgerImg3 allBurgerImg recipe">
+                <img src="Images/step3.jpg" alt="">
+                <button class="saveImage">Save For Later</button>
+            </div>
+            
+
+            <div class="burgerGuide4 allBurgerGuide recipe">
+                
+                    <div class="burgerGuideHead"><h3>Step 4:</h3></div>
+                    <div class="burgerGuideBody">
+                        <p>Toast buns. Using the beef fat that's left over in the pan. add your top and bottom buns with their inside side facing down.
+                            Toast until golden brown. Remove from heat and spread 1 tbsp. of mayonnaise on the bottom bun.
+                        </p>
+                    </div>
+                    <button class="saveGuideTxt">Save For Later</button>
+            </div>
+
+            <div class="burgerImg4 allBurgerImg recipe">
+                <img src="Images/step4.jpg" alt="">
+                <button class="saveImage">Save For Later</button>
+            </div>
+
+            <div class="burgerGuide5 allBurgerGuide recipe">
+                
+                    <div class="burgerGuideHead"><h3>Step 5:</h3></div>
+                    <!--Created a list-->
+                    <div class="burgerGuideBody">
+                        <span>Assemble the burger as follows:</span>
+                        <ol>
+                            <li>Bottom bun with mayonnaise.</li>
+                            <li>Two pieces of lettuce.</li>
+                            <li>Add two patties with their melted cheese.</li>
+                            <li>Add on slice of tomato.</li>
+                            <li>Add your favourite sauce.</li>
+                            <li>Add top bun.</li>
+                        </ol>
+                    </div>
+                    <button class="saveGuideTxt">Save For Later</button>
+            </div>
+
+            <div class="burgerImg5 allBurgerImg recipe">
+                <img src="Images/step5.jpeg" alt="">
+                <button class="saveImage">Save For Later</button>
+            </div>
+       
+        <div class="buyHead"><h1>Buy ingredients now</h1></div>
+
+        <!--The following 3 divs with the "buyLink" class contains images that are linked to external resources.-->
+        <div class="buyPic buyLink">
+            <a href="https://www.pnp.co.za/pnpstorefront/pnp/en/?gclid=CjwKCAiAhreNBhAYEiwAFGGKPI3S0Nvk_wIf0CgMDSp8E0YQ9XdL9W3CNznTDuA--NFo_y-9YEfWphoCgboQAvD_BwE&gclsrc=aw.ds"><img src="https://searchlogovector.com/wp-content/uploads/2019/06/pick-n-pay-logo-vector.png" alt="Pic n Pay"></a>
+            <button class="saveImage">Save For Later</button> 
+        </div>
+
+        <div class="buyWoolies buyLink">
+            <a href="https://www.woolworths.co.za/cat/Online-Feature/Featured-for-Content/Woolies-Dash/_/N-1oqo8fi?gclid=CjwKCAiAhreNBhAYEiwAFGGKPE1BZBse6PCUGS-FovmNxpfjrroyqgbgPELq0M8fAEARMOViSQPm9xoC6SYQAvD_BwE"><img src="https://giftacres.co.za/wp-content/uploads/2019/01/woolworths-logo.jpg" alt="Woolworths Food"></a>
+            <button class="saveImage">Save For Later</button> 
+        </div>
+
+        <div class="buyCheckers buyLink">
+            <a href="https://www.sixty60.co.za/?gclid=CjwKCAiAhreNBhAYEiwAFGGKPDzJdviaKzRKQY8yU5QYaSSQkmYmd9Gx2v51NPrV0zUlTkXlefnjNhoCTdwQAvD_BwE&gclsrc=aw.ds"><img src="https://i.ytimg.com/vi/VWySakronKQ/maxresdefault.jpg" alt="Checkers 60 60"></a>
+            <button class="saveImage">Save For Later</button> 
+        </div>
+
+        <div class="userCommentsHead">
+            <h2>User comments</h2>
+        </div>
+        
+        <div class="userComment1 userComments">
+            <h3>John Doe -</h3>
+            <p>"Awesome recipe ! Will definetly recommend it to my friends and family. Can't wait to make this again !"</p>
+        </div>
+
+        <div class="userComment2 userComments">
+            <h3>Jane Doe -</h3>
+            <p>"Its the bomb ! Thank you so much for sharing this recipe. I was always afraid to make burgers from scratch but it so simple and easy."</p>
+        </div>
+
+        <div class="userComment3 userComments">
+            <h3>Eddy Joe -</h3>
+            <p>"I'll never buy another burger in my life !"</p>
+        </div>
+        
+        <!--***Created div that contains two buttons.-->
+        <div class="hideShow">
+            <button id="hide">Hide</button>
+            <button id="show">Show</button>
+        </div>
+        
+
+        <div class="commentHead"><h2>Leave a comment</h2></div>
+
+            <!--Div that contains a form that acts as a comment section.-->
+            <div class="commentContainer">
+                <form action="#">
+                    <input type="text" name="name" placeholder="Please enter your full name...">
+                    <input type="text" name="email" placeholder="Please enter your e-mail address...">
+                    <textarea name="comment" placeholder="Type a comment!"></textarea>
+                    <p>Leave a like: <button id="likeBtn" type = "button">Like</button></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!--***Created div that contains two buttons.-->
+            <div id="slideComSec">
+                <button id="slideUp">Slide Up</button>
+                <button id="slideDown">Slide down</button>
+            </div>
+
+            
+
+        <div class="pizzaHead">
+            <h1>The ultimate pizza</h1>
+        </div>
+
+        <div class="pizzaWhyImg">
+            <div class="pizzaWhyTxt">
+                <h1>Coming soon</h1>
+            </div>
+        </div>
+        <!--Code block ends-->
+    </div>
+</body>
+</html>

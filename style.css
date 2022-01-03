@@ -1,0 +1,1092 @@
+html {
+  background-color: #111111;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body button {
+  border-radius: 12px;
+  border-style: none;
+  background-color: white;
+  color: #111111;
+  padding: 5px 5px;
+  margin: 0px;
+}
+
+.navContainer {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  margin: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav .navlist {
+  display: inline-block;
+}
+
+nav .bar1, nav .bar2, nav .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+nav .logo {
+  text-decoration: none;
+  color: white;
+  font-size: 170%;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: none;
+  gap: 30px;
+  letter-spacing: 2px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.indexGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 0.1fr 0.5fr;
+      grid-template-rows: 1fr 0.1fr 0.5fr;
+      grid-template-areas: "header header" "about about" "aboutTxt aboutImg";
+}
+
+.headerImg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  position: relative;
+  overflow: hidden;
+  background: url(https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1478&q=80) no-repeat center;
+  background-size: cover;
+}
+
+.headerImg .header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.headerImg .header h1 {
+  text-transform: uppercase;
+  font-size: 300%;
+  text-align: center;
+}
+
+.headerImg .header h2 {
+  text-align: center;
+}
+
+.about {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: about;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.aboutTxt {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: aboutTxt;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  background-color: #111111;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 150%;
+  padding: 0px 30px;
+}
+
+.aboutImg {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: aboutImg;
+}
+
+.aboutImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.recipeGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.1fr 0.3fr 0.1fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+      grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.1fr 0.3fr 0.1fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+      grid-template-areas: "recipeHead recipeHead recipeHead recipeHead recipeHead" "burgerHead burgerHead burgerHead burgerHead burgerHead" ". burgerWhyImg burgerWhyImg burgerWhyImg." ". burgerWhyTxt burgerWhyTxt burgerWhyTxt ." ". tableContainer tableContainer tableContainer ." ". burgerGuide1 burgerGuide1 burgerImg1 ." ". burgerImg2 burgerGuide2 burgerGuide2 ." ". burgerGuide3 burgerGuide3 burgerImg3 ." ". burgerImg4 burgerGuide4 burgerGuide4 ." ". burgerGuide5 burgerGuide5 burgerImg5 ." "buyHead buyHead buyHead buyHead buyHead" ". buyPic buyCheckers buyWoolies ." "userCommentsHead userCommentsHead userCommentsHead userCommentsHead userCommentsHead" ". userComment1 userComment2 userComment3 ." ". . hideShow . ." "commentHead commentHead commentHead commentHead commentHead" "commentContainer commentContainer commentContainer commentContainer commentContainer" ". . slideComSec . ." "pizzaHead pizzaHead pizzaHead pizzaHead pizzaHead" "pizzaWhyImg pizzaWhyImg pizzaWhyImg pizzaWhyImg pizzaWhyImg";
+}
+
+.recipeHeadImg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: recipeHead;
+  position: relative;
+  overflow: hidden;
+  background: url(https://images.unsplash.com/photo-1605709303019-109aaf636e32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80) no-repeat center;
+  background-size: cover;
+}
+
+.recipeHeadImg .recipeHead {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.recipeHeadImg .recipeHead h1 {
+  text-transform: uppercase;
+  font-size: 300%;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.burgerHead {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: burgerHead;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.burgerWhyImg {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: burgerWhyImg;
+}
+
+.burgerWhyImg img {
+  width: 100%;
+  height: 90%;
+}
+
+.burgerWhyTxt {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: burgerWhyTxt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.burgerWhyTxt p {
+  font-size: 110%;
+}
+
+.tableContainer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: tableContainer;
+  margin: 30px 0px;
+}
+
+.tableContainer table {
+  background-color: white;
+  color: #111111;
+  padding: 30px 30px;
+  border-radius: 12px;
+  border: 1px solid white;
+  border-spacing: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.burgerGuideHead {
+  margin: 0px 20px;
+}
+
+.burgerGuideBody {
+  margin: 0px 20px;
+}
+
+.burgerGuide1 {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: burgerGuide1;
+}
+
+.burgerGuide2 {
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: burgerGuide2;
+}
+
+.burgerGuide3 {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  -ms-grid-row: 8;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: burgerGuide3;
+}
+
+.burgerGuide4 {
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: burgerGuide4;
+}
+
+.burgerGuide5 {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  -ms-grid-row: 10;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: burgerGuide5;
+}
+
+.allBurgerImg img {
+  width: 100%;
+  height: 94%;
+}
+
+.burgerImg1 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+  grid-area: burgerImg1;
+}
+
+.burgerImg2 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: burgerImg2;
+}
+
+.burgerImg3 {
+  -ms-grid-row: 8;
+  -ms-grid-column: 4;
+  grid-area: burgerImg3;
+}
+
+.burgerImg4 {
+  -ms-grid-row: 9;
+  -ms-grid-column: 2;
+  grid-area: burgerImg4;
+}
+
+.burgerImg5 {
+  -ms-grid-row: 10;
+  -ms-grid-column: 4;
+  grid-area: burgerImg5;
+}
+
+.buyHead {
+  -ms-grid-row: 11;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: buyHead;
+  border-top: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buyLink {
+  margin: 20px 10px;
+}
+
+.buyPic {
+  -ms-grid-row: 12;
+  -ms-grid-column: 2;
+  grid-area: buyPic;
+}
+
+.buyPic img {
+  width: 100%;
+  height: 95%;
+}
+
+.buyWoolies {
+  -ms-grid-row: 12;
+  -ms-grid-column: 4;
+  grid-area: buyWoolies;
+}
+
+.buyWoolies img {
+  width: 100%;
+  height: 95%;
+}
+
+.buyCheckers {
+  -ms-grid-row: 12;
+  -ms-grid-column: 3;
+  grid-area: buyCheckers;
+}
+
+.buyCheckers img {
+  width: 100%;
+  height: 95%;
+}
+
+.userCommentsHead {
+  -ms-grid-row: 13;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: userCommentsHead;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userComments {
+  margin: 20px 20px;
+  padding: 0px 30px;
+  background-color: white;
+  color: #111111;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.userComment1 {
+  -ms-grid-row: 14;
+  -ms-grid-column: 2;
+  grid-area: userComment1;
+  border-right: 1px solid white;
+}
+
+.userComment2 {
+  -ms-grid-row: 14;
+  -ms-grid-column: 3;
+  grid-area: userComment2;
+}
+
+.userComment3 {
+  -ms-grid-row: 14;
+  -ms-grid-column: 4;
+  grid-area: userComment3;
+  border-left: 1px solid white;
+}
+
+.hideShow {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 15;
+  -ms-grid-column: 3;
+  grid-area: hideShow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hideShow button {
+  width: 50%;
+  height: 50%;
+  border-style: none;
+  border-radius: 12px;
+  padding: 5px 5px;
+}
+
+#show {
+  margin-left: 5px;
+}
+
+.commentHead {
+  border-top: 1px solid white;
+  -ms-grid-row: 16;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: commentHead;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.commentContainer {
+  -ms-grid-row: 17;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: commentContainer;
+  width: 100%;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.commentContainer form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.commentContainer form input {
+  font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 10px 30px;
+  border-radius: 12px;
+  border-style: none;
+}
+
+.commentContainer form textarea {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  height: 150px;
+  margin: 10px 30px;
+  border-style: none;
+}
+
+.commentContainer form p {
+  margin-left: 30px;
+}
+
+.commentContainer form .liked {
+  background-color: #3C3CA9;
+}
+
+.commentContainer form button {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  border-style: none;
+  height: 30px;
+  margin: 10px 30px;
+  width: 15%;
+}
+
+#slideComSec {
+  -ms-grid-row: 18;
+  -ms-grid-column: 3;
+  grid-area: slideComSec;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#slideComSec #slideDown {
+  margin-left: 5px;
+}
+
+#slideComSec button {
+  width: 50%;
+  height: 50%;
+  border-style: none;
+  border-radius: 12px;
+  padding: 5px 5px;
+}
+
+.pizzaHead {
+  -ms-grid-row: 19;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: pizzaHead;
+  border-top: 1px solid white;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 5px;
+}
+
+.pizzaWhyImg {
+  -ms-grid-row: 20;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: pizzaWhyImg;
+  position: relative;
+  overflow: hidden;
+  background: url(https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) no-repeat center;
+  background-size: cover;
+}
+
+.pizzaWhyImg .pizzaWhyTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 900px;
+}
+
+.pizzaWhyImg .pizzaWhyTxt h1 {
+  text-transform: uppercase;
+  font-size: 500%;
+  letter-spacing: 20px;
+  text-align: center;
+  padding: 0px 30px;
+}
+
+.contactGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 2fr 0.1fr 1fr 0.1fr 0.5fr;
+      grid-template-rows: 2fr 0.1fr 1fr 0.1fr 0.5fr;
+      grid-template-areas: "contactHeadImg" "shoutHead" "shout" "newsLetterHead" "newsLetterContainer" "socialHeader" "socialIcons";
+}
+
+.contactHeadImg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: contactHeadImg;
+  position: relative;
+  overflow: hidden;
+  background: url(https://images.unsplash.com/photo-1485770958101-9dd7e4ea6d93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80) no-repeat center;
+  background-size: cover;
+}
+
+.contactHeadImg .contactHead {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.contactHeadImg .contactHead h1 {
+  text-transform: uppercase;
+  font-size: 300%;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.shoutHead {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: shoutHead;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shout {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: shout;
+  border-bottom: 1px solid white;
+  width: 100%;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shout form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shout form input {
+  font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 10px 30px;
+  border-radius: 12px;
+  border-style: none;
+}
+
+.shout form textarea {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  height: 150px;
+  margin: 10px 30px;
+  border-style: none;
+}
+
+.shout form button {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  border-style: none;
+  height: 30px;
+  margin: 10px 30px;
+  width: 15%;
+}
+
+.newsLetterHead {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: newsLetterHead;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsLetterContainer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: newsLetterContainer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newsLetterContainer form .radioButton {
+  background-color: white;
+  color: #111111;
+  border-radius: 12px;
+  padding: 10px 20px;
+}
+
+.newsLetterContainer form .radioButton .radioLine {
+  margin-bottom: 20px;
+}
+
+.newsLetterContainer form .emailForm {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newsLetterContainer form .emailForm input {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  height: 50px;
+  margin: 10px 0px;
+  border-style: none;
+}
+
+.newsLetterContainer form .emailForm button {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  border-style: none;
+  height: 30px;
+  width: 15%;
+  margin: 10px 0px;
+}
+
+.socialHeader {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: socialHeader;
+  border-top: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socialIcons {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: socialIcons;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  color: #111111;
+  background-color: white;
+  font-size: 500%;
+  margin: 0px 20px;
+  border-radius: 50%;
+  padding: 25px 30px;
+}
+
+.socialIcons .fa-facebook {
+  padding: 25px 40px;
+}
+
+#saveForLaterContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 0.1fr 1fr;
+      grid-template-rows: 1fr 0.1fr 1fr;
+      grid-template-areas: " saveForLaterHead  saveForLaterHead saveForLaterHead " ". displaySaveHead ." ". displaySave .";
+}
+
+#saveForLaterImg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: saveForLaterHead;
+  position: relative;
+  overflow: hidden;
+  background: url(https://images.unsplash.com/photo-1618912487390-8987d3c3b862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80) no-repeat center;
+  background-size: cover;
+}
+
+#saveForLaterImg #saveForLaterHead {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+#saveForLaterImg #saveForLaterHead h1 {
+  text-transform: uppercase;
+  font-size: 300%;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+#displaySaveHead {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: displaySaveHead;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#displaySave {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: displaySave;
+}
+
+#displaySave button {
+  display: none;
+}
+
+#displaySave img {
+  width: 700px;
+  height: 500px;
+}
+
+@media only screen and (max-width: 480px) {
+  .indexGrid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: "header" "about" "aboutImg" "aboutTxt";
+  }
+  .recipeGrid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.3fr 0.3fr 0.3fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-areas: "recipeHead" "burgerHead" "burgerWhyImg" "burgerWhyTxt" "tableContainer" "burgerGuide1" "burgerImg1" "burgerGuide2" "burgerImg2"  "burgerGuide3" "burgerImg3" "burgerGuide4"  "burgerImg4"  "burgerGuide5" "burgerImg5" "buyHead" "buyPic"  "buyCheckers" "buyWoolies"  "userCommentsHead" "userComment1" "userComment2" "userComment3" "hideShow" "commentHead" "commentContainer" "slideComSec " "pizzaHead" "pizzaWhyImg";
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0px;
+  }
+  nav ul {
+    gap: 10px;
+  }
+  .pizzaHead h1 {
+    font-size: 180%;
+  }
+  .pizzaWhyImg .pizzaWhyTxt h1 {
+    font-size: 250%;
+    letter-spacing: 0px;
+  }
+  .commentContainer {
+    width: 100%;
+  }
+  .commentContainer form {
+    width: 100%;
+  }
+  .commentContainer form button {
+    width: 25%;
+  }
+  .socialIcons a {
+    font-size: 300%;
+    margin: 0px 10px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 769px) {
+  .indexGrid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: "header" "about" "aboutImg" "aboutTxt";
+  }
+  .aboutTxt {
+    border: none;
+    font-size: 100%;
+  }
+  .recipeGrid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.5fr 0.5fr 0.1fr 0.1fr 0.5fr 0.1fr 0.1fr 1fr;
+        grid-template-areas: "recipeHead recipeHead" "burgerHead burgerHead" "burgerWhyImg burgerWhyImg" "burgerWhyTxt burgerWhyTxt" "tableContainer tableContainer" "burgerGuide1 burgerImg1" "burgerImg2 burgerGuide2" "burgerGuide3 burgerImg3" "burgerImg4 burgerGuide4" "burgerGuide5 burgerImg5" "buyHead buyHead" "buyPic buyCheckers" "buyWoolies ." "userCommentsHead userCommentsHead" "userComment1 userComment2" "userComment3 ." "hideShow hideShow" "commentHead commentHead" "commentContainer commentContainer" "slideComSec slideComSec" "pizzaHead pizzaHead" "pizzaWhyImg pizzaWhyImg";
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0px;
+  }
+  nav ul {
+    gap: 10px;
+  }
+  .commentContainer {
+    width: 100%;
+  }
+  .commentContainer form {
+    width: 100%;
+  }
+  .commentContainer form button {
+    width: 25%;
+  }
+  .pizzaWhyImg .pizzaWhyTxt h1 {
+    font-size: 250%;
+    letter-spacing: 0px;
+  }
+  .buyLink {
+    margin: 20px 0px 0px 0px;
+  }
+  .socialIcons a {
+    font-size: 300%;
+    margin: 0px 10px;
+  }
+}
+
+.allBurgerImg img {
+  height: 90%;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+  .indexGrid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.5fr;
+        grid-template-areas: "header" "about" "aboutImg" "aboutTxt";
+  }
+  .aboutTxt {
+    border: none;
+  }
+  .recipeGrid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.1fr 0.1fr 1fr;
+        grid-template-rows: 1fr 0.1fr 0.5fr 0.3fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.5fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.1fr 0.1fr 1fr;
+        grid-template-areas: "recipeHead recipeHead recipeHead" "burgerHead burgerHead burgerHead" "burgerWhyImg burgerWhyImg burgerWhyImg" "burgerWhyTxt burgerWhyTxt burgerWhyTxt" "tableContainer tableContainer tableContainer" "burgerGuide1 burgerGuide1 burgerImg1" "burgerImg2 burgerGuide2 burgerGuide2" "burgerGuide3 burgerGuide3 burgerImg3" "burgerImg4 burgerGuide4 burgerGuide4" "burgerGuide5 burgerGuide5 burgerImg5" "buyHead buyHead buyHead" "buyPic buyCheckers buyWoolies" "userCommentsHead userCommentsHead userCommentsHead" "userComment1 userComment2 userComment3" ". hideShow ." "commentHead commentHead commentHead" "commentContainer commentContainer commentContainer commentContainer commentContainer" ". slideComSec ." "pizzaHead pizzaHead pizzaHead" "pizzaWhyImg pizzaWhyImg pizzaWhyImg";
+  }
+  .buyLink {
+    margin: 20px 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
