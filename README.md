@@ -1,5 +1,13 @@
 # My first Website !
 
+## Table of Contents
+| Sections | Links | 
+| ------------- |:-------------:|
+| Description | [Click Me](#description) |
+| Installation | [Click Me](#installation) |   
+| Usage | [Click Me](#usage) |
+| Additional authors | [Click Me](#additional-authors) |
+
 ## Discription:
 This is the first real website I have ever built. It is a recipe site where you can find the ultimate recipes of everyday food items.
 This project enabled me to succesfully use and learn more about HTML SCSS and Javascript. I used jQuery for all the animations, hiding and showing functions and sliding functions. I paired jQuery with JSON for all the "save for later" elements. I created a functional "save for later" page as well where you can view the elements you have saved.
